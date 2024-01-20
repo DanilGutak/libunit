@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   04_null_char_test.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 16:13:19 by dgutak            #+#    #+#             */
-/*   Updated: 2024/01/20 19:28:17 by dgutak           ###   ########.fr       */
+/*   Created: 2024/01/20 14:44:36 by dgutak            #+#    #+#             */
+/*   Updated: 2024/01/20 19:32:20 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "../tests.h"
 
-int	main(void)
+int	atoi_null_char_test(void)
 {
-	strlen_launcher();
-	strcmp_launcher();
-	atoi_launcher();
+	if (ft_atoi("228\0	12") == 228)
+		return (0);
+	else
+		return (-1);
 }

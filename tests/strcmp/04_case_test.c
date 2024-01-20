@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   01_basic_test_ok.c                                 :+:      :+:    :+:   */
+/*   04_case_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:44:36 by dgutak            #+#    #+#             */
-/*   Updated: 2024/01/20 16:23:25 by dgutak           ###   ########.fr       */
+/*   Updated: 2024/01/20 19:34:35 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../sample.h"
+#include "../tests.h"
 
-int	test_ok(void)
+int	strcmp_case_test(void)
 {
-	if (1)
+	if (ft_strcmp("abc", "ABC") > 0)
 		return (0);
 	else
 		return (-1);

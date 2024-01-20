@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   03_basic_test_seg.c                                :+:      :+:    :+:   */
+/*   02_dif_len_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:44:36 by dgutak            #+#    #+#             */
-/*   Updated: 2024/01/20 17:56:25 by dgutak           ###   ########.fr       */
+/*   Updated: 2024/01/20 19:22:15 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../sample.h"
+#include "../tests.h"
 
-int	test_seg(void)
+int	strcmp_diff_len_test(void)
 {
-	if (make_segfault() == 0)
+	if (ft_strcmp("abc", "abcd") < 0)
 		return (0);
 	else
 		return (-1);

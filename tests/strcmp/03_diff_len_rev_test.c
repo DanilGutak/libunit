@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_basic_test_bus.c                                :+:      :+:    :+:   */
+/*   03_diff_len_rev_test.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:44:36 by dgutak            #+#    #+#             */
-/*   Updated: 2024/01/20 16:23:12 by dgutak           ###   ########.fr       */
+/*   Updated: 2024/01/20 19:23:29 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../sample.h"
+#include "../tests.h"
 
-int	test_bus(void)
+int	strcmp_diff_len_rev_test(void)
 {
-	if (make_buserror() == 0)
+	if (ft_strcmp("abcd", "abc") > 0)
 		return (0);
 	else
 		return (-1);

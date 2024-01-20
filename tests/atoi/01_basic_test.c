@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   01_basic_test.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 16:13:19 by dgutak            #+#    #+#             */
-/*   Updated: 2024/01/20 19:28:17 by dgutak           ###   ########.fr       */
+/*   Created: 2024/01/20 14:44:36 by dgutak            #+#    #+#             */
+/*   Updated: 2024/01/20 19:31:37 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tests.h"
+#include "../tests.h"
 
-int	main(void)
+int	atoi_basic_test(void)
 {
-	strlen_launcher();
-	strcmp_launcher();
-	atoi_launcher();
+	if (ft_atoi("42") == 42)
+		return (0);
+	else
+		return (-1);
 }
