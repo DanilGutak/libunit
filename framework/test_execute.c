@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_execute.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aapenko <aapenko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:51:54 by aapenko           #+#    #+#             */
-/*   Updated: 2024/01/20 19:00:13 by aapenko          ###   ########.fr       */
+/*   Updated: 2024/01/20 19:14:44 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	print_result(int success, int total)
 	ft_putnbr_fd(success, 1);
 	ft_putchar_fd('/', 1);
 	ft_putnbr_fd(total, 1);
-	ft_putstr_fd(" tests checked\n", 1);
+	ft_putstr_fd(" tests checked\n\n", 1);
 }
 
 static int	check_status(int status)
