@@ -6,7 +6,7 @@
 /*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:44:36 by dgutak            #+#    #+#             */
-/*   Updated: 2024/01/20 15:23:59 by dgutak           ###   ########.fr       */
+/*   Updated: 2024/01/20 15:24:47 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,9 @@ void	ft_strcat(char *dest, const char *src)
 
 int			always_buse(void)
 {
-	char *a;
-	char *b;
+	char a[7] = "Hello";
+	char b[6] = "World";
 
-	a = "Hello";
-	b = "World";
 	ft_strcat(a, b);
 	return (0);
 }
