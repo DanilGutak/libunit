@@ -1,5 +1,5 @@
 # Variables
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRC = free.c test_execute.c tests_preparetion.c
 OBJ = $(SRC:.c=.o)
