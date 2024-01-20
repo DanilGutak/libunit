@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   test_execute.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: aapenko <aapenko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:51:54 by aapenko           #+#    #+#             */
-/*   Updated: 2024/01/20 17:59:27 by dgutak           ###   ########.fr       */
+/*   Updated: 2024/01/20 19:00:13 by aapenko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 
-static int	print_status(int status)
+static int	print_status(int status, char *name)
 {
+	ft_putstr_fd(name, 1);
 	if (status == OK)
 		ft_putstr_fd("\033[32m[OK]\033[0m", 1);
 	else if (status == KO)
@@ -78,7 +79,7 @@ int	launch_tests(t_unit_test *testlist, int success, int total)
 			temp = temp->next;
 		}
 		wait(&status);
-		success += print_status(check_status(status));
+		success += print_status(check_status(status), temp->name);
 		temp = temp->next;
 	}
 	return (free_testlist(testlist), print_result(success, total), 0);
