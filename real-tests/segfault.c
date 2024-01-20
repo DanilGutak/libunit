@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   segfault.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 16:13:19 by dgutak            #+#    #+#             */
-/*   Updated: 2024/01/20 16:23:00 by dgutak           ###   ########.fr       */
+/*   Created: 2024/01/20 14:44:36 by dgutak            #+#    #+#             */
+/*   Updated: 2024/01/20 16:22:28 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sample.h"
-int	main(void)
+
+int	make_segfault(void)
 {
-	if (sample_test_launcher())
-		return (-1);
-	else
-		return (0);
+	char	*str;
+
+	str = 0;
+	str[0] = 'a';
+	return (0);
 }

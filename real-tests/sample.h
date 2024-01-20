@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sample.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 16:13:19 by dgutak            #+#    #+#             */
-/*   Updated: 2024/01/20 16:23:00 by dgutak           ###   ########.fr       */
+/*   Created: 2024/01/20 16:14:24 by dgutak            #+#    #+#             */
+/*   Updated: 2024/01/20 16:22:20 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sample.h"
-int	main(void)
-{
-	if (sample_test_launcher())
-		return (-1);
-	else
-		return (0);
-}
+#ifndef SAMPLETEST_H
+# define SAMPLETEST_H
+
+# include "../framework/libunit.h"
+
+int	sample_test_launcher(void);
+int test_ok(void);
+int test_ko(void);
+int test_seg(void);
+int test_bus(void);
+
+int make_buserror(void);
+int make_segfault(void);
+
+int sample_test_launcher(void);
+#endif

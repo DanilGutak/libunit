@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   buserror.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 16:13:19 by dgutak            #+#    #+#             */
-/*   Updated: 2024/01/20 16:23:00 by dgutak           ###   ########.fr       */
+/*   Created: 2024/01/20 14:44:36 by dgutak            #+#    #+#             */
+/*   Updated: 2024/01/20 16:21:57 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sample.h"
-int	main(void)
+
+int    make_buserror(void)
 {
-	if (sample_test_launcher())
-		return (-1);
-	else
-		return (0);
+    char    *p;
+    int        i;
+
+    asm("pushf\n\torl $0x40000,(%rsp)\n\tpopf");
+    p = malloc(sizeof(int) + 1);
+    p++;
+    i = *(int *)p;
+    (void)i;
+    return (1);
 }
