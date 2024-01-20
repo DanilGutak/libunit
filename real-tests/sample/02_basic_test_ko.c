@@ -6,11 +6,12 @@
 /*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:44:36 by dgutak            #+#    #+#             */
-/*   Updated: 2024/01/20 14:45:31 by dgutak           ###   ########.fr       */
+/*   Updated: 2024/01/20 16:23:20 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+
+#include "../sample.h"
 
 int	test_ko(void)
 {
