@@ -6,7 +6,7 @@
 /*   By: aapenko <aapenko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 12:26:12 by aapenko           #+#    #+#             */
-/*   Updated: 2024/01/20 16:39:41 by aapenko          ###   ########.fr       */
+/*   Updated: 2024/01/20 16:46:20 by aapenko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <sys/wait.h>
 # include <signal.h>
-# include "libft.h"
+# include "../libft/libft.h"
 # define OK 0
 # define KO 1
 # define SEGV 2

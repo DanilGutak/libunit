@@ -6,7 +6,7 @@
 /*   By: aapenko <aapenko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:51:54 by aapenko           #+#    #+#             */
-/*   Updated: 2024/01/20 16:29:57 by aapenko          ###   ########.fr       */
+/*   Updated: 2024/01/20 16:55:56 by aapenko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 static int	print_status(int status)
 {
 	if (status == OK)
-		ft_putstr("\033[32m[OK]\033[0m");
+		ft_putstr_fd("\033[32m[OK]\033[0m", 1);
 	else if (status == KO)
-		ft_putstr("\033[31m[KO]\033[0m");
+		ft_putstr_fd("\033[31m[KO]\033[0m", 1);
 	else if (status == SEGV)
-		ft_putstr("\033[31m[SEGV]\033[0m");
+		ft_putstr_fd("\033[31m[SEGV]\033[0m", 1);
 	else if (status == BUSE)
-		ft_putstr("\033[31m[BUSE]\033[0m");
-	ft_putchar('\n');
+		ft_putstr_fd("\033[31m[BUSE]\033[0m", 1);
+	ft_putchar_fd('\n', 1);
 	if (status == OK)
 		return (1);
 	else
@@ -31,11 +31,11 @@ static int	print_status(int status)
 
 static	void print_result(int success, int total)
 {
-	ft_putchar('\n');
-	ft_putnbr(success);
-	ft_putchar('/');
-	ft_putnbr(total);
-	ft_putstr(" tests checked\n");
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(success, 1);
+	ft_putchar_fd('/', 1);
+	ft_putnbr_fd(total, 1);
+	ft_putstr_fd(" tests checked\n", 1);
 }
 
 static	int check_status(int status)
