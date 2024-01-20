@@ -6,7 +6,7 @@
 /*   By: aapenko <aapenko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 12:26:12 by aapenko           #+#    #+#             */
-/*   Updated: 2024/01/20 12:44:42 by aapenko          ###   ########.fr       */
+/*   Updated: 2024/01/20 16:39:41 by aapenko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@
 # include <stdlib.h>
 # include <sys/wait.h>
 # include <signal.h>
+# include "libft.h"
 # define OK 0
 # define KO 1
 # define SEGV 2
 # define BUSE 3
 # define MALLOC_FAILURE 1
+# define FORK_FAILURE 2
 typedef struct	s_unit_test
 {
 	char		*name;

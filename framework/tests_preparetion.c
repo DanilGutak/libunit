@@ -6,12 +6,11 @@
 /*   By: aapenko <aapenko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 12:41:12 by aapenko           #+#    #+#             */
-/*   Updated: 2024/01/20 12:49:03 by aapenko          ###   ########.fr       */
+/*   Updated: 2024/01/20 16:39:29 by aapenko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
-#include "libft.h"
 
 int			load_test(t_unit_test *testlist, char *name, int (*func)(void))
 {
