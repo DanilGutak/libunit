@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aapenko <aapenko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 12:45:21 by aapenko           #+#    #+#             */
-/*   Updated: 2024/01/20 14:47:51 by aapenko          ###   ########.fr       */
+/*   Updated: 2024/01/20 18:01:41 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libunit.h"
 
-void free_testlist(t_unit_test *testlist)
+void	free_testlist(t_unit_test *testlist)
 {
-	t_unit_test *tmp;
+	t_unit_test	*tmp;
 
 	while (testlist)
 	{

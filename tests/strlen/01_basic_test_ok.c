@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   04_empty_test.c                                    :+:      :+:    :+:   */
+/*   01_basic_test_ok.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 12:35:07 by aapenko           #+#    #+#             */
-/*   Updated: 2024/01/20 14:52:05 by dgutak           ###   ########.fr       */
+/*   Created: 2024/01/20 14:44:36 by dgutak            #+#    #+#             */
+/*   Updated: 2024/01/20 16:23:25 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libunit.h"
+#include "../sample.h"
 
-int basic_test(void)
+int	test_ok(void)
 {
-	if (ft_strlen("Hello") == 6)
+	if (1)
 		return (0);
 	else
 		return (-1);

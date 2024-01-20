@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_basic_test_ko.c                                 :+:      :+:    :+:   */
+/*   tests.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 14:44:36 by dgutak            #+#    #+#             */
-/*   Updated: 2024/01/20 17:56:21 by dgutak           ###   ########.fr       */
+/*   Created: 2024/01/20 16:14:24 by dgutak            #+#    #+#             */
+/*   Updated: 2024/01/20 18:07:36 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../sample.h"
+#ifndef TESTS_H
+# define TESTS_H
 
-int	test_ko(void)
-{
-	if (0)
-		return (0);
-	else
-		return (-1);
-}
+# include "../framework/libunit.h"
+
+void	strlen_launcher(void);
+void	strdup_launcher(void);
+void	strcmp_launcher(void);
+void	strncmp_launcher(void);
+void	atoi_launcher(void);
+
+#endif

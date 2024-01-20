@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_execute.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aapenko <aapenko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:51:54 by aapenko           #+#    #+#             */
-/*   Updated: 2024/01/20 16:55:56 by aapenko          ###   ########.fr       */
+/*   Updated: 2024/01/20 17:59:27 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	print_status(int status)
 		return (0);
 }
 
-static	void print_result(int success, int total)
+static void	print_result(int success, int total)
 {
 	ft_putchar_fd('\n', 1);
 	ft_putnbr_fd(success, 1);
@@ -38,50 +38,48 @@ static	void print_result(int success, int total)
 	ft_putstr_fd(" tests checked\n", 1);
 }
 
-static	int check_status(int status)
+static int	check_status(int status)
 {
 	if (WIFEXITED(status))
 	{
 		if (WEXITSTATUS(status) == 0)
-			return OK;
+			return (OK);
 		else
-			return KO;
+			return (KO);
 	}
 	else if (WIFSIGNALED(status))
 	{
 		if (WTERMSIG(status) == SIGSEGV)
-			return SEGV;
+			return (SEGV);
 		else if (WTERMSIG(status) == SIGBUS)
-			return BUSE;
+			return (BUSE);
 	}
-	return KO;
+	return (KO);
 }
 
-int	launch_tests(t_unit_test *testlist)
+int	launch_tests(t_unit_test *testlist, int success, int total)
 {
+	t_unit_test	*temp;
 	int			pid;
 	int			status;
-	int			success;
-	int			total;
 
-	success = 0;
-	total = 0;
-	while (testlist)
+	temp = testlist;
+	while (temp && ++total)
 	{
 		pid = fork();
 		if (pid == -1)
-			return FORK_FAILURE;
+			return (free_testlist(testlist), FORK_FAILURE);
 		if (pid == 0)
 		{
-			if (testlist->func() == 0)
-				exit(OK);
+			if (temp->func() == 0)
+				return (free_testlist(testlist), exit(OK), 0);
 			else
-				exit(KO);
-			testlist = testlist->next;
+				return (free_testlist(testlist), exit(KO), 1);
+			temp = temp->next;
 		}
 		wait(&status);
 		success += print_status(check_status(status));
-		total++;
+		temp = temp->next;
 	}
-	return (print_result(success, total), 0);
+	return (free_testlist(testlist), print_result(success, total), 0);
 }

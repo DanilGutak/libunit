@@ -6,15 +6,13 @@
 /*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 16:13:19 by dgutak            #+#    #+#             */
-/*   Updated: 2024/01/20 16:23:00 by dgutak           ###   ########.fr       */
+/*   Updated: 2024/01/20 18:04:47 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sample.h"
+
 int	main(void)
 {
-	if (sample_test_launcher())
-		return (-1);
-	else
-		return (0);
+	sample_test_launcher();
 }
