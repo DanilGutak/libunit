@@ -6,7 +6,7 @@
 /*   By: dgutak <dgutak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:51:54 by aapenko           #+#    #+#             */
-/*   Updated: 2024/01/20 19:14:44 by dgutak           ###   ########.fr       */
+/*   Updated: 2024/01/21 13:54:30 by dgutak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,13 @@ int	launch_tests(t_unit_test *testlist, int success, int total)
 				return (free_testlist(testlist), exit(OK), 0);
 			else
 				return (free_testlist(testlist), exit(KO), 1);
-			temp = temp->next;
 		}
 		wait(&status);
 		success += print_status(check_status(status), temp->name);
 		temp = temp->next;
 	}
-	return (free_testlist(testlist), print_result(success, total), 0);
+	free_testlist(testlist);
+	if (success == total)
+		return (print_result(success, total), OK);
+	return (print_result(success, total), -KO);
 }
